@@ -29,18 +29,23 @@ class HospitalDashBoardHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
+      appBar: _buildAppBar(),
+    );
+  }
+
+  Widget _buildAppBar(){
+    return AppBar(
         title: Text("Dash Board"),
         backgroundColor: primaryColor,
         elevation: 0,
         actions: <Widget>[
           // Icon(Icons.notifications),
-          // IconButton(
-          Icon(Icons.notifications),
-          //   onPressed: () {
-          //     print("presionado");
-          //   },
-          // ),
+          IconButton(
+          icon: Icon(Icons.notifications),
+            onPressed: () {
+              print("presionado");
+            },
+          ),
           Container(
             width: 50.0,
             alignment: Alignment.center,
@@ -79,8 +84,7 @@ class HospitalDashBoardHome extends StatelessWidget {
             width: 10.0,
           ),
         ],
-      ),
-    );
+      );
   }
 
   Widget _buildCard(context, {Widget child}) {
