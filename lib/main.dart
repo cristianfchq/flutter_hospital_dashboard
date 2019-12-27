@@ -30,6 +30,7 @@ class HospitalDashBoardHome extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: _buildAppBar(),
+      bottomNavigationBar: _buildBottomBar(),
     );
   }
 
@@ -85,6 +86,42 @@ class HospitalDashBoardHome extends StatelessWidget {
           ),
         ],
       );
+  }
+
+  Widget _buildBottomBar(){
+    return BottomAppBar(
+      elevation: 0.0,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              Icons.label_outline,
+              size: 35.0,
+              color: primaryColor,
+            ),
+            Icon(
+              Icons.ac_unit,
+              color: Colors.grey,
+              size: 30.0,
+            ),
+            Icon(
+              Icons.tune,
+              size: 30.0,
+              color: Colors.grey,
+            ),
+            Icon(
+              Icons.perm_identity,
+              color: Colors.grey,
+              size: 30.0,
+              
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   Widget _buildCard(context, {Widget child}) {
