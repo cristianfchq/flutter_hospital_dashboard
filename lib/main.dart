@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hospital_dasboard/account.card.dart';
 import 'package:flutter_hospital_dasboard/appointment.card.dart';
 import 'package:flutter_hospital_dasboard/chart-painter.dart';
 
@@ -175,14 +176,16 @@ class HospitalDashBoardHome extends StatelessWidget {
                   ),
                   Expanded(
                     child: CustomPaint(
-                      foregroundPainter: ChartPainter(),
+                      foregroundPainter:
+                          ChartPainter(), /**Con ChartPainter dibujamos las lineas */
                     ),
                   ),
                   Container(
                     height: 30.0,
                     width: MediaQuery.of(context).size.width,
                     child: Stack(
-                      children: _buildChartLegend(context),
+                      children: _buildChartLegend(
+                          context), /**Con _buildChartLegend(context) colocamos los meses */
                     ),
                   ),
                 ],
@@ -208,7 +211,8 @@ class HospitalDashBoardHome extends StatelessWidget {
                   ),
                   _buildCard(
                     context,
-                    child: AppointmentCard(),
+                    child:
+                        AppointmentCard(), /**Con AppointmentCard() creamos el card de Today y canceled */
                   ),
                   SizedBox(
                     height: 20.0,
@@ -219,6 +223,43 @@ class HospitalDashBoardHome extends StatelessWidget {
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  _buildCard(
+                    context,
+                    child: AccountCard(
+                      name: 'Luisa Patel',
+                      id: 'ID: AA741',
+                      hour: '10:00 pm',
+                      active: true,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  _buildCard(
+                    context,
+                    child: AccountCard(
+                      name: 'Sara Fuller',
+                      id: 'ID: BA953',
+                      hour: '11:00 pm',
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  _buildCard(
+                    context,
+                    child: AccountCard(
+                      name: 'Javier Fuller',
+                      id: 'ID: DD5666',
+                      hour: '01:00 pm',
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0,
                   ),
                 ],
               ),
@@ -266,12 +307,21 @@ class HospitalDashBoardHome extends StatelessWidget {
         );
       }
     }
-
     return legend.toList();
   }
 
   String getMonth(int index) {
-    final months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug','Sep'];
+    final months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep'
+    ];
     return months[index];
   }
 }
