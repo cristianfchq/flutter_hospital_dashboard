@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hospital_dasboard/appointment.card.dart';
 import 'package:flutter_hospital_dasboard/chart-painter.dart';
 
 void main() => runApp(MyApp());
@@ -36,61 +37,61 @@ class HospitalDashBoardHome extends StatelessWidget {
     );
   }
 
-  Widget _buildAppBar(){
+  Widget _buildAppBar() {
     return AppBar(
-        title: Text("Dash Board"),
-        backgroundColor: primaryColor,
-        elevation: 0,
-        actions: <Widget>[
-          // Icon(Icons.notifications),
-          IconButton(
+      title: Text("Dash Board"),
+      backgroundColor: primaryColor,
+      elevation: 0,
+      actions: <Widget>[
+        // Icon(Icons.notifications),
+        IconButton(
           icon: Icon(Icons.notifications),
-            onPressed: () {
-              print("presionado");
-            },
-          ),
-          Container(
-            width: 50.0,
-            alignment: Alignment.center,
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  width: 35.0,
-                  height: 35.0,
+          onPressed: () {
+            print("presionado");
+          },
+        ),
+        Container(
+          width: 50.0,
+          alignment: Alignment.center,
+          child: Stack(
+            children: <Widget>[
+              Container(
+                width: 35.0,
+                height: 35.0,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.grey,
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: NetworkImage(
+                      "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: 0.0,
+                right: 0.0,
+                child: Container(
+                  width: 10.0,
+                  height: 10.0,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.grey,
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: NetworkImage(
-                        "http://www.usanetwork.com/sites/usanetwork/files/styles/629x720/public/suits_cast_harvey.jpg?itok=fpTOeeBb",
-                      ),
-                    ),
+                    color: Color(0xff00ff1d),
                   ),
                 ),
-                Positioned(
-                  bottom: 0.0,
-                  right: 0.0,
-                  child: Container(
-                    width: 10.0,
-                    height: 10.0,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xff00ff1d),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-          SizedBox(
-            width: 10.0,
-          ),
-        ],
-      );
+        ),
+        SizedBox(
+          width: 10.0,
+        ),
+      ],
+    );
   }
 
-  Widget _buildBottomBar(){
+  Widget _buildBottomBar() {
     return BottomAppBar(
       elevation: 0.0,
       child: Padding(
@@ -118,7 +119,6 @@ class HospitalDashBoardHome extends StatelessWidget {
               Icons.perm_identity,
               color: Colors.grey,
               size: 30.0,
-              
             ),
           ],
         ),
@@ -126,7 +126,7 @@ class HospitalDashBoardHome extends StatelessWidget {
     );
   }
 
-  Widget _buildBody(BuildContext context){
+  Widget _buildBody(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
@@ -142,7 +142,7 @@ class HospitalDashBoardHome extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(20,0,20,16),
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -150,16 +150,17 @@ class HospitalDashBoardHome extends StatelessWidget {
                     width: 100.0,
                     height: 30.0,
                     decoration: BoxDecoration(
-                      color: Color(0xff4d9eff),
-                      borderRadius: BorderRadius.circular(10)
-                    ),
+                        color: Color(0xff4d9eff),
+                        borderRadius: BorderRadius.circular(10)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           "Monthly",
-                          style: TextStyle(color: Colors.white,),
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                         Icon(
                           Icons.arrow_drop_down_circle,
@@ -192,7 +193,36 @@ class HospitalDashBoardHome extends StatelessWidget {
         Flexible(
           flex: 3,
           child: Container(
-
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(10, 15, 10, 10),
+              child: ListView(
+                children: <Widget>[
+                  Text(
+                    "Appointments",
+                    style:
+                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  _buildCard(
+                    context,
+                    child: AppointmentCard(),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text(
+                    "Today (28 January)",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ],
@@ -241,7 +271,7 @@ class HospitalDashBoardHome extends StatelessWidget {
   }
 
   String getMonth(int index) {
-    final months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'];
+    final months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug','Sep'];
     return months[index];
   }
 }
