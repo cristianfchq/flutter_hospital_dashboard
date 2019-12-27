@@ -4,7 +4,47 @@ A new Flutter project.
 
 ## commit3 added the appBar in the app
 
-![](images/commit3%20added%20the%20appBar%20in%20the%20app.png)
+<p align="center">
+  <img src="images/commit3 added the appBar in the app.png" title="added the appBar in the app">
+</p>
+
+## commit4 added the BottomAppBar in the app
+
+<p align="center">
+  <img src="images/commi4 added the BottomAppBar in the app.png" title="added the BottomAppBar in the app">
+</p>
+
+## commit5 added the body with chart-painter
+
+<p align="center">
+  <img src="images/commi5 added the body with chart-painter.png" title="added the body with chart-painter">
+</p>
+
+## commit6 added the months in the body
+
+<p align="center">
+  <img src="images/commi6 added the months in the body.png" title="added the months in the body">
+</p>
+
+## commit7 added the Appointments
+
+<p align="center">
+  <img src="images/commi7 added the Appointments.png" title="added the Appointments">
+</p>
+
+## commit8 added the current-data-chart-painter..dart in the app
+
+<p align="center">
+  <img src="images/commi8 added the current-data-chart-painter..dart in the app.png" title="added the current-data-chart-painter..dart in the app">
+</p>
+
+## commit9 added the section Today (28 January)
+
+<p align="center">
+  <img src="images/commi9 added the section Today (28 January).png" title="added the section Today (28 January)">
+</p>
+
+# another way to put images on github
 
 ## commit4 added the BottomAppBar in the app
 
