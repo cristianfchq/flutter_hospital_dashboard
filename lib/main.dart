@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 //    );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Flutter Demo 2',
       home: HospitalDashBoardHome(),
     );
   }

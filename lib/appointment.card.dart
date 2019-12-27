@@ -74,7 +74,7 @@ class AppointmentCard extends StatelessWidget {
                       Text(
                         subtitle,
                         style: TextStyle(
-                          fontSize: 17,
+                          fontSize: 15,
                           color: Colors.grey,
                         ),
                       ),
