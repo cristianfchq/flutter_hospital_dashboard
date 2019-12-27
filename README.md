@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-![commit3 added the appBar in the app](images/commit3%added%the%appBar%in%the%app.png)
+![](images/commit3%added%the%appBar%in%the%app.png)
 ![](images/commi4 added the BottomAppBar in the app.png)
 ![](images/commi5 added the body with chart-painter.png)
 ![](images/commi6 added the months in the body.png)
