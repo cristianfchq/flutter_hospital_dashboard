@@ -19,7 +19,7 @@ class AppointmentCard extends StatelessWidget {
 
   Widget _buildDivider() {
     return Flexible(
-      flex: 1,
+      flex: 0,
       child: SizedBox(
         width: 5,
         child: Container(
@@ -44,14 +44,14 @@ class AppointmentCard extends StatelessWidget {
       child: Container(
         height: 80,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+          padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Container(
                 width: 60,
-                height: 80,
+                height: 60,
                 child: CustomPaint(
                   painter: CurrentDataChartPainter(
                     chartColor,

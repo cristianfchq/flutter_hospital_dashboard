@@ -53,7 +53,7 @@ class AccountCard extends StatelessWidget {
                 subtitle: Text(id),
               ),
             ),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -63,16 +63,21 @@ class AccountCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(width: 10),
-                Icon(
-                  Icons.check_circle,
-                  size: 30,
-                  color: Color(0xff26e56d),
-                ),
-                Icon(
-                  Icons.cancel,
-                  size: 30,
-                  color: Color(0xffff4077),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(
+                      Icons.check_circle,
+                      size: 30,
+                      color: Color(0xff26e56d),
+                    ),
+                    Icon(
+                      Icons.cancel,
+                      size: 30,
+                      color: Color(0xffff4077),
+                    ),
+                  ],
                 ),
               ],
             ),
