@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hospital_dasboard/chart-painter.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,6 +32,7 @@ class HospitalDashBoardHome extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: _buildAppBar(),
       bottomNavigationBar: _buildBottomBar(),
+      body: _buildBody(context),
     );
   }
 
@@ -121,6 +123,72 @@ class HospitalDashBoardHome extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildBody(BuildContext context){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Flexible(
+          flex: 2,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              color: primaryColor,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(40.0),
+                bottomRight: Radius.circular(40.0),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20,0,20,16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    width: 100.0,
+                    height: 30.0,
+                    decoration: BoxDecoration(
+                      color: Color(0xff4d9eff),
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          "Monthly",
+                          style: TextStyle(color: Colors.white,),
+                        ),
+                        Icon(
+                          Icons.arrow_drop_down_circle,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Expanded(
+                    child: CustomPaint(
+                      foregroundPainter: ChartPainter(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        Flexible(
+          flex: 3,
+          child: Container(
+
+          ),
+        ),
+      ],
     );
   }
 
