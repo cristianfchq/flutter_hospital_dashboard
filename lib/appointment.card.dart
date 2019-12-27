@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_hospital_dasboard/current-data-chart-painter..dart';
+import 'package:flutter_hospital_dasboard/current-data-chart-painter..dart';
 
 class AppointmentCard extends StatelessWidget {
   const AppointmentCard({Key key}) : super(key: key);
@@ -52,11 +52,11 @@ class AppointmentCard extends StatelessWidget {
               Container(
                 width: 60,
                 height: 80,
-                // child: CustomPaint(
-                //   painter: CurrentDataChartPainter(
-                //     chartColor,
-                //   ),
-                // ),
+                child: CustomPaint(
+                  painter: CurrentDataChartPainter(
+                    chartColor,
+                  ),
+                ),
               ),
               Expanded(
                 child: Container(
