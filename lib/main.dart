@@ -177,6 +177,13 @@ class HospitalDashBoardHome extends StatelessWidget {
                       foregroundPainter: ChartPainter(),
                     ),
                   ),
+                  Container(
+                    height: 30.0,
+                    width: MediaQuery.of(context).size.width,
+                    child: Stack(
+                      children: _buildChartLegend(context),
+                    ),
+                  ),
                 ],
               ),
             ),
